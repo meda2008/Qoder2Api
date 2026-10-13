@@ -36,9 +36,9 @@ def do_login(interactive=True):
             webbrowser.open(url)
         except Exception:
             pass
-        print("  Waiting up to 5 minutes...")
+        print("  Waiting up to 30 minutes...")
     try:
-        creds = client.poll_login(nonce, verifier, timeout=300)
+        creds = client.poll_login(nonce, verifier, timeout=1800)
     except TimeoutError:
         print("  Timed out. Nothing saved.")
         return False
